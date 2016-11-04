@@ -1,0 +1,30 @@
+# R-programming exercise: Loop and Flow control
+# Examine if each line have negative number. If no negative number, output the mean. 
+# If has negative number and in total no more than three lines with negative number has been encountered, output 'row i has negative num'
+# If has negative number and in total more than three lines with negative number has been encountered, output 'too many negatives'
+
+set.seed(1786)
+data.exercise.3.1<-exp(matrix(rnorm(2000),nrow=100))
+index1.temp<-sample(1:100,10)
+index2.temp<-sample(1:20,10)
+for(i in 1:10){
+  data.exercise.3.1[index1.temp[i],index2.temp[i]]<--1
+}
+
+my.data <- data.exercise.3.1
+
+count.negative <- 0
+for(i in 1:nrow(my.data)) {
+  negative<-(min(my.data[i,])<0)
+  count.negative <- count.negative + negative
+  if (count.negative <= 3 & !negative) {
+    cat('The mean of row number',i,'is',mean(my.data[i,]),'\n')
+  }
+  if (count.negative <= 3 & negative) {
+    cat('<Row',i,'contains negative values>','\n')
+  }
+  if (count.negative >3) {
+    cat('Too many negative values','\n')
+    break
+  }
+}
