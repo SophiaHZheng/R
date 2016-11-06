@@ -11,4 +11,4 @@ for (i in 1:k2){
 mean1 <- mean(m)
 
 
-# also can use:     m <- mean(df[,i])
+# also can use:     m[i] <- mean(df[,i])
