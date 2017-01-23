@@ -1,6 +1,6 @@
 # R-exercise
 
-This repository includes my exercises of R programming in classes or online courses. 
+This repository includes my exercises of R programming completed in classes or online courses. 
 
 The files starting with 'Exercise' are mostly basic practices when learning R.
 
