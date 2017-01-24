@@ -1,7 +1,6 @@
 setwd('/Wk4 data')
 
 # Get a histogram of mortality rate (11th column)
-# There is 'not available' in the dataset, so have to convert data into numeric first!!!
 outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
 head(outcome)
 hist(as.numeric(outcome[,11]))
@@ -70,7 +69,7 @@ rankall <- function(outcome, num = 'best') {
     if (!outcome %in% colname)  {stop('invalid outcome')}
     
     ## For each state, find the hospital of the given rank
-    state_num <- factor(data$state_name)   #find number of categories
+    state_num <- factor(data$state_name)  
     state_level <- levels(state_num) 
     hospitalist <- c()
     
